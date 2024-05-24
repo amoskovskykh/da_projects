@@ -9,3 +9,5 @@ In this project I followed a video by [Shashank Kalanithi](https://www.youtube.c
 ## 2. Excel interactive dashboard
 
 In this project, I created an interactive Excel dashboard to analyze coffee sales over a four-year period, based on a tutorial by [Mo Chen](https://www.youtube.com/watch?v=m13o5aqeCbM&ab_channel=MoChen). I gathered customer and product data from separate sources and integrated them into the dashboard for comprehensive analysis. With the dashboard, you can manipulate the timeline with real-time data updates, apply different filters, view total sales by country, and identify the top 5 customers by sales.
+
+![png](excel_coffe_dashboard.png)
