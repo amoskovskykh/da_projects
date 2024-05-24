@@ -1,1 +1,8 @@
-README.md on the first project to add
+# Data Analyst portfolio projects
+
+***
+
+## 1. Survey monkey dataset analysis (processing data from wide to long format + basic aggregations)
+
+In this project I followed a video by [Shashank Kalanithi](https://www.youtube.com/watch?v=pKvWD0f18Pc&ab_channel=ShashankKalanithi) on conducting the analysis raw, wide-format pivoted data. The task statement involved basic cleaning, transforming the data into a long format, and performing basic aggregations.
+
