@@ -21,7 +21,8 @@ In this project, I created an interactive Excel dashboard to analyze coffee sale
 This project stands out as one of the most technically complex that I've created. I mainly focused on solidifying my SQL skills through the implementation of a full ETL lifecycle - **extracting** raw data from different sources into staging zone tables, performing data cleaning and **transformation**, and **loading** data into a final database for further descriptive analysis in Power BI.
 
 I utilized data about movies and their ratings from two sources:
-- [Rotten Tomatoes Top Movies dataset from Kaggle](https://www.kaggle.com/datasets/thedevastator/rotten-tomatoes-top-movies-ratings-and-technical); - [IMDb Non-Commercial Dataset](https://developer.imdb.com/non-commercial-datasets/). 
+- [Rotten Tomatoes Top Movies dataset from Kaggle](https://www.kaggle.com/datasets/thedevastator/rotten-tomatoes-top-movies-ratings-and-technical); 
+- [IMDb Non-Commercial Dataset](https://developer.imdb.com/non-commercial-datasets/). 
 
 Raw data was loaded into three stage zone tables. Within the stage zone I conducted basic cleaning, removed duplicates, performed type casting and defined a subset of data common to both sources. The common subset was defined based on matching movie titles and years from both datasets.
 
