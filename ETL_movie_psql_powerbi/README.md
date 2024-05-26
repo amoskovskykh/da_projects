@@ -7,4 +7,4 @@
 
 ## Final database physical model
 
-![png](movies_db_model)
+![png](movies_db_model.png)
