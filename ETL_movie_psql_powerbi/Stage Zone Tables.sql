@@ -9,7 +9,6 @@ CREATE TABLE title_rating (
 -- executed in psql cli
 \copy title_rating FROM 'C:\Users\user\DA_journey\etl_movie_psql\data\title_rating.csv' WITH (FORMAT csv, HEADER true)
 
-
 CREATE TABLE title_basic (
 	tconst VARCHAR(50) PRIMARY KEY,
 	titleType VARCHAR(50),
@@ -22,7 +21,8 @@ CREATE TABLE title_basic (
 	genres VARCHAR(200)
 );
 
-
+-- RUN prior to the copy
+-- SET client_encoding TO 'UTF8';
 \copy title_basic FROM 'C:\Users\user\DA_journey\etl_movie_psql\data\title_basic_utf.csv' WITH (FORMAT csv, HEADER true)
 
 	CREATE TABLE rotten_tomatoes (
@@ -39,7 +39,6 @@ CREATE TABLE title_basic (
 	box_office VARCHAR(50)
 );
 
-
 \copy rotten_tomatoes FROM 'C:\Users\user\DA_journey\etl_movie_psql\data\rotten_tomatoes.csv' WITH (FORMAT csv, HEADER true)
 
 -- drop table title_rating;
@@ -47,9 +46,9 @@ CREATE TABLE title_basic (
 -- drop table rotten_tomatoes;
 
 -- SELECT * 
--- -- FROM title_rating
+-- FROM title_rating
 -- -- FROM title_basic
--- FROM rotten_tomatoes
--- ORDER BY box_office ASC
+-- -- FROM rotten_tomatoes
+-- LIMIT 10;
 
 -- SHOW server_encoding;

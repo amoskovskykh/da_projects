@@ -29,7 +29,7 @@ BEGIN
 			GROUP BY title, year
 		);
 	
-	-- joing tables from in the stage zone 
+	-- joing tables in the stage zone 
     CREATE TEMP TABLE temp_joined_table AS
     SELECT tb.tconst, rt.id, rt.title, tb.startYear AS imdb_year, rt."year" AS rt_year
     FROM title_basic tb 
@@ -65,7 +65,6 @@ $$ LANGUAGE plpgsql;
 CALL filter_stage_zone();
 
 -- SELECT * FROM temp_joined_table LIMIT 10;
-SELECT imdb_year FROM temp_joined_table ORDER BY imdb_year DESC;
 
 -- removing double quotes
 CREATE OR REPLACE PROCEDURE remove_dquotes() AS $$
@@ -74,25 +73,15 @@ BEGIN
 	SET
 		primaryTitle = REPLACE(primaryTitle, '"', ''),
 		originalTitle = REPLACE(originalTitle, '"', ''),
-		genres = REPLACE(genres, '"', '')
-	WHERE
-		primaryTitle LIKE '%"%' OR
-		originalTitle LIKE '%"%' OR 
-		genres LIKE '%"%';
+		genres = REPLACE(genres, '"', '');
 
 	UPDATE rotten_tomatoes
 	SET
 		title = REPLACE(title, '"', ''),
 		rating = REPLACE(rating, '"', ''),
 		genre_rt = REPLACE(genre_rt, '"', ''),
-		director = REPLACE(director, '"', '')
-	WHERE
-		title LIKE '%"%' OR
-		rating LIKE '%"%' OR 
-		genre_rt LIKE '%"%' OR
-		director LIKE '%"%';
+		director = REPLACE(director, '"', '');
 END;
 $$ LANGUAGE plpgsql;
 
 CALL remove_dquotes();
-
