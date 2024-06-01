@@ -67,9 +67,9 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-BEGIN;
+-- BEGIN;
 CALL filter_stage_zone();
-SELECT * FROM rotten_tomatoes;
+-- SELECT * FROM rotten_tomatoes;
 -- ROLLBACK;
 
 -- SELECT * FROM temp_joined_table LIMIT 10;
