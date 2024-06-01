@@ -35,20 +35,25 @@ BEGIN
     FROM title_basic tb 
 	INNER JOIN rotten_tomatoes rt ON rt.title = tb.primaryTitle AND rt."year" = tb.startYear
     INNER JOIN title_rating tr ON tb.tconst = tr.tconst;
-	
-	WITH duplicates_id AS (
-    SELECT id
-    FROM temp_joined_table
-    GROUP BY id
-    HAVING COUNT(*) > 1
-	)
+
+	-- deleting duplicates
 	DELETE FROM temp_joined_table
-	WHERE id IN (SELECT id FROM duplicates_id)
-		AND (tconst, id) NOT IN (
-			SELECT MIN(tconst), id
-			FROM temp_joined_table
-			GROUP BY id
-		);
+	WHERE (tconst, id) NOT IN (SELECT MIN(tconst), id FROM temp_joined_table GROUP BY id);
+
+	-- my previous code for deleting duplicates
+	-- WITH duplicates_id AS (
+ --    SELECT id
+ --    FROM temp_joined_table
+ --    GROUP BY id
+ --    HAVING COUNT(*) > 1
+	-- )
+	-- DELETE FROM temp_joined_table
+	-- WHERE id IN (SELECT id FROM duplicates_id)
+	-- 	AND (tconst, id) NOT IN (
+	-- 		SELECT MIN(tconst), id
+	-- 		FROM temp_joined_table
+	-- 		GROUP BY id
+	-- 	);
 
     DELETE FROM rotten_tomatoes
     WHERE (id) NOT IN (SELECT id FROM temp_joined_table);
@@ -62,7 +67,10 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+BEGIN;
 CALL filter_stage_zone();
+SELECT * FROM rotten_tomatoes;
+-- ROLLBACK;
 
 -- SELECT * FROM temp_joined_table LIMIT 10;
 
