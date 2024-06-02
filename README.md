@@ -33,7 +33,7 @@ While transforming the data, the sample size was significantly reduced, impactin
 
 
 ## 3. Tableau interactive dashboard (British Airways Review)
-In this project, I created an interactive dashboard in Tableau to showcase average review statistics for British Airways, based on a tutorial by [Mo Chen](https://www.youtube.com/watch?v=m13o5aqeCbM&ab_channel=MoChen). I imported data from two CSV files and introduced a custom parameter metric designed to effectively measure customer satisfaction. Utilizing Tableau features I created a dashboard featuring a map and a line chart showcasing the custom metric, multiple filters, descriptive summary, and a dual bar chart displaying the average custom metric by aircraft type.
+In this project, I created an interactive dashboard in Tableau to showcase average review statistics for British Airways, based on a tutorial by [Mo Chen](https://www.youtube.com/watch?v=KlAKAarfLRQ&t=1167s&ab_channel=MoChen). I imported data from two CSV files and introduced a custom parameter metric designed to effectively measure customer satisfaction. Utilizing Tableau features I created a dashboard featuring a map and a line chart showcasing the custom metric, multiple filters, descriptive summary, and a dual bar chart displaying the average custom metric by aircraft type.
 
 ![png](airline_reviews_tableau.png)
 
