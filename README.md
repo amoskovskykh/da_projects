@@ -41,8 +41,26 @@ In this project, I created an interactive dashboard in Tableau to showcase avera
 
 
 
-## 4. Survey monkey dataset analysis (processing data from wide to long format + basic aggregations)
+## 4. Marketing A/B Testing python project (EDA, Pareto, Chi-square)
 
-In this project, I followed a video by [Shashank Kalanithi](https://www.youtube.com/watch?v=pKvWD0f18Pc&ab_channel=ShashankKalanithi) on conducting analysis on raw, wide-format pivoted data. The task statement involved basic cleaning, transforming the data into a long format, and performing basic aggregations.
+In this project I aimed to solve a real world problem of Analysing the success of a marketing compaign based on a [kaggle Marketing A/B testing dataset](https://www.kaggle.com/datasets/faviovaz/marketing-ab-testing). 
+Data dictionary:
+- Index: Row index
+- user id: User ID (unique)
+- test group: If "ad" the person saw the advertisement, if "psa" they only saw the public service announcement
+- converted: If a person bought the product then True, else is False
+- total ads: Amount of ads seen by person
+- most ads day: Day that the person saw the biggest amount of ads
+- most ads hour: Hour of day that the person saw the biggest amount of ads
+
+With prior Exploratory Data Analysis, I summarized and visualized the main dataset characteristics, tracked conversions within both groups across different attributes, and concluded that the data has some outliers. I found that there is a difference in conversion rates between groups, but further A/B testing is needed to determine its significance. I also identified the days and hours when users saw the highest number of ads.
+
+When removing outliers, I accounted for the number of users and conversions excluded from consideration at this step.
+
+I was interested in seeing the contribution to conversion based on the number of ads seen. To visualize this, I binned the data by the number of ads seen, calculated the conversion rate within each bin, and created a Pareto chart. At this stage, I concluded that most users haven't seen that many ads. Despite a rapid decline in the number of ads viewed, the contribution to the conversion rate remains consistently stable. Conversion among those who saw more ads is significantly higher.
+
+For the A/B testing part, I ran a chi-square test to determine whether there is a correlation between two categorical variables. Based on the test results, I concluded that the difference of 0.77% in conversion between the two groups is significant.
+
+![png](marketing_ab_testing_highlights.png)
 
 ---
