@@ -81,7 +81,7 @@ Database design, generated data and business questions asked were further genera
 ![png](elmir_logical_model.png)
 
 ### Physical MSSQL model:
-![alt text](physical_elmir_updated.png)
+![alt text](elmir_physical_model.png)
 ***
 ### Relationships
 #### Many-to-Many:
