@@ -42,7 +42,7 @@ BEGIN
 END;
 GO
 
---DELETE FROM categories DBCC CHECKIDENT ('elmir.categories', RESEED, 0)
+--DELETE FROM categories DBCC CHECKIDENT ('categories', RESEED, 0)
 --EXEC add_categories;
 --SELECT * FROM categories;
 
@@ -187,7 +187,7 @@ GO
 
 --EXEC add_brands;
 --SELECT * FROM brands;
---DELETE FROM brands DBCC CHECKIDENT ('elmir.brands', RESEED, 0)
+--DELETE FROM brands DBCC CHECKIDENT ('brands', RESEED, 0)
 
 
 
@@ -233,7 +233,7 @@ GO
 -- Create '#TempCities" temporary table with a predefined list of 97 Ukrainian cities
 -- Used to specify city in stores and customers tables
 CREATE TABLE #TempCities(
-	ID INT NOT NULL IDENTITY(1,1)  PRIMARY KEY,
+	ID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	city_name NVARCHAR(50)
 );
 
@@ -431,7 +431,7 @@ BEGIN
 		last_name,
 		CONCAT(first_name, '_', last_name, ROW_NUMBER() OVER (ORDER BY NEWID()), '@example.com') AS email,
 		CONCAT('ул. Велика Васильківська ', ROW_NUMBER() OVER (ORDER BY NEWID())) AS address,
-		CAST(ABS(CHECKSUM(NEWID()) % @TotalCities) + 1 AS INT) AS RandomCity
+		ABS(CHECKSUM(NEWID()) % @TotalCities) + 1 AS RandomCity
 	INTO #TempCustomers
 	FROM (SELECT TOP (@MaxCustomers) first_name, last_name FROM #UniqueNameCombs) AS un_names 
 	ORDER BY NEWID()  -- Ensure random selection of addresses in combination with TOP (@MaxCustomers)
@@ -452,7 +452,7 @@ BEGIN
 END 
 GO
 
---DELETE FROM customers DBCC CHECKIDENT ('elmir.customers', RESEED, 0)
+--DELETE FROM customers DBCC CHECKIDENT ('customers', RESEED, 0)
 --EXEC add_customers @MaxCustomers = 13000
 --SELECT * FROM customers;
 
@@ -500,7 +500,7 @@ BEGIN
 END
 GO
 
---DELETE FROM stores DBCC CHECKIDENT ('elmir.stores', RESEED, 0)
+--DELETE FROM stores DBCC CHECKIDENT ('stores', RESEED, 0)
 --EXEC add_stores @MaxStores = 600
 --SELECT * FROM stores;
 
@@ -874,7 +874,7 @@ GO
 --	SELECT TOP(5) * FROM product_inventory ORDER BY quantity DESC;
 
 --	INSERT INTO order_details(order_id, product_id, quantity) VALUES
---	(6999, 39, 100); -- specify product_id here instead of 28
+--	(7001, 39, 100); -- specify product_id here instead of 28
 
 --	SELECT * FROM order_details ORDER BY order_id DESC
 

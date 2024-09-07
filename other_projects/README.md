@@ -77,7 +77,7 @@ Database design, generated data and business questions asked were further genera
 |                         |                                                                         | `cost_modifier` – Cost modifier  
 
 
-### Logial models:
+### Logical model:
 ![png](elmir_logical_model.png)
 
 ### Physical MSSQL model:
