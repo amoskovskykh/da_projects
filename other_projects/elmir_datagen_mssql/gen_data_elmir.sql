@@ -485,7 +485,7 @@ BEGIN
             dbo.GeneratePhoneNumber() AS phone
             --CAST(ABS(CHECKSUM(NEWID()) % @TotalCities) + 1 AS INT) AS RandomCity
         FROM Nums
-		ORDER BY NEWID() -- Ensure random selection of store_address. TOP (@MaxCustomers) required
+		ORDER BY NEWID() -- Ensure random selection of store_address. TOP (@MaxStores) required
 	)
 	INSERT INTO stores (store_name, phone, store_city, store_address, email)
 	SELECT
