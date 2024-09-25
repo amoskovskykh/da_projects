@@ -7,8 +7,8 @@ This project was carried out as part of my academic freelancing projects.
 The task statement was to choose an ecommerce business, conduct a brief analysis of its model, product listings and services to further design a Database in MSSQL, generate synthetic data, formulate and answer business questions with SQL queries.
 Project requirement also included a well maintained documentation.
 
-As for a model client suggested Elmir ecommerce business, which is a retailer specializing in consumer electronics and home appliances, operating both online and through physical stores. It has 3 stores located in Kharkiv and a service center. Besides selling products, the company provides services, such as computer and digital equipment repair.
-Database design, generated data and business questions asked were further generalized for a typical retailer ecommerce business.
+As for a model client suggested Elmir ecommerce business, which is a retailer specializing in consumer electronics and home appliances, operating both online and through physical stores. It has 3 stores located in Kharkiv and a service center. Besides selling products, the company provides services, such as computer and digital equipment repair.<br>
+Database design, generated data, and business questions asked were further generalized for a typical retailer ecommerce business.
 ***
 ### General Data Model Structure for a retailer ecommerce business:
 1. Products - key entity of the information system. Contains information about the physcial products presented on the store's website. Products are classified by categories, brands.
