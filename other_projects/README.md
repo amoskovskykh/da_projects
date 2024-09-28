@@ -53,6 +53,9 @@ Database design, generated data, and business questions asked were further gener
 |               |                                                                              | `phone` – Phone number  
 |               |                                                                              | `store_city` – Store city  
 |               |                                                                              | `store_address` – Store address  
+| **product_inventory**    | Contains information about the quantity of products available in stock | `product_id` – Product identifier (PK)  
+|               |                                                                              | `quantity` – available number of products in stock
+|               |                                                                              | `updated_at` – last time quantity was updated 
 | **orders**              | Contains information about orders                                       | `order_id` – Order identifier (PK)  
 |                         |                                                                         | `order_date` – Order date  
 |                         |                                                                         | `order_status` – Order status  
